@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7D521E17D41001BF221 /* AppDelegate.swift */; };
-		DB79D7D821E17D41001BF221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7D721E17D41001BF221 /* ViewController.swift */; };
 		DB79D7DB21E17D41001BF221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7D921E17D41001BF221 /* Main.storyboard */; };
 		DB79D7DE21E17D41001BF221 /* RoomieDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7DC21E17D41001BF221 /* RoomieDo.xcdatamodeld */; };
 		DB79D7E021E17D43001BF221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7DF21E17D43001BF221 /* Assets.xcassets */; };
 		DB79D7E321E17D43001BF221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */; };
 		DB79D7EE21E17D43001BF221 /* RoomieDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7ED21E17D43001BF221 /* RoomieDoTests.swift */; };
 		DB79D7F921E17D43001BF221 /* RoomieDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7F821E17D43001BF221 /* RoomieDoUITests.swift */; };
+		DB79D80A21E17DA5001BF221 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80921E17DA5001BF221 /* Task.swift */; };
+		DB79D80C21E17DCA001BF221 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80B21E17DCA001BF221 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		DB79D7D221E17D41001BF221 /* RoomieDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomieDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79D7D521E17D41001BF221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB79D7D721E17D41001BF221 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB79D7DA21E17D41001BF221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB79D7DD21E17D41001BF221 /* RoomieDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoomieDo.xcdatamodel; sourceTree = "<group>"; };
 		DB79D7DF21E17D43001BF221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		DB79D7F421E17D43001BF221 /* RoomieDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoomieDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79D7F821E17D43001BF221 /* RoomieDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomieDoUITests.swift; sourceTree = "<group>"; };
 		DB79D7FA21E17D43001BF221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB79D80921E17DA5001BF221 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DB79D80B21E17DCA001BF221 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 		DB79D7D421E17D41001BF221 /* RoomieDo */ = {
 			isa = PBXGroup;
 			children = (
+				DB79D80721E17D7D001BF221 /* Models */,
+				DB79D80621E17D74001BF221 /* ViewControllers */,
 				DB79D7D521E17D41001BF221 /* AppDelegate.swift */,
-				DB79D7D721E17D41001BF221 /* ViewController.swift */,
 				DB79D7D921E17D41001BF221 /* Main.storyboard */,
 				DB79D7DF21E17D43001BF221 /* Assets.xcassets */,
 				DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */,
@@ -126,6 +129,30 @@
 				DB79D7FA21E17D43001BF221 /* Info.plist */,
 			);
 			path = RoomieDoUITests;
+			sourceTree = "<group>";
+		};
+		DB79D80621E17D74001BF221 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB79D80B21E17DCA001BF221 /* TaskViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DB79D80721E17D7D001BF221 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB79D80821E17D86001BF221 /* Tasks */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB79D80821E17D86001BF221 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				DB79D80921E17DA5001BF221 /* Task.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB79D7D821E17D41001BF221 /* ViewController.swift in Sources */,
 				DB79D7DE21E17D41001BF221 /* RoomieDo.xcdatamodeld in Sources */,
+				DB79D80C21E17DCA001BF221 /* TaskViewController.swift in Sources */,
+				DB79D80A21E17DA5001BF221 /* Task.swift in Sources */,
 				DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  RoomieDo
 //
-//  Created by Jenelle Feole on 1/5/19.
+//  Created by Rui Vaz on 1/5/19.
 //  Copyright © 2019 Astrolab. All rights reserved.
 //
 
