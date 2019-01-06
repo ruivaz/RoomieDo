@@ -13,7 +13,6 @@
         <!--Task View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="TaskView" customModule="RoomieDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -40,6 +39,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dbv-Ef-5KQ">
                             <connections>
                                 <action selector="addTask:" destination="BYZ-38-t0r" id="HuY-Yt-VHb"/>
+                                <segue destination="vKp-Q7-Do4" kind="presentation" id="OPy-XC-tIf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -47,8 +47,58 @@
                         <outlet property="tableView" destination="naB-C9-FhW" id="nzY-0Q-khQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="692" y="3.1484257871064472"/>
+        </scene>
+        <!--New Task View-->
+        <scene sceneID="olF-Yj-GCE">
+            <objects>
+                <viewController id="ncb-yf-daC" customClass="NewTaskView" customModule="RoomieDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JLg-HM-hYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgG-By-9a3">
+                                <rect key="frame" x="16" y="146" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfA-Uj-b74">
+                                <rect key="frame" x="109" y="141" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rWf-fg-tGa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3ii-Gb-G7V">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9CR-9o-po1">
+                            <connections>
+                                <action selector="cancel:" destination="ncb-yf-daC" id="faR-n2-mZN"/>
+                                <segue destination="5vb-fR-lDU" kind="presentation" id="B8i-u7-Ncx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yl8-zt-ovv">
+                            <connections>
+                                <action selector="saveTask:" destination="ncb-yf-daC" id="YKp-hf-t5R"/>
+                                <segue destination="zgg-oY-ct9" kind="unwind" unwindAction="unwindFromAddNewTask:" id="xmp-sX-Cvk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="taskName" destination="FfA-Uj-b74" id="8lo-K9-oH0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUT-r5-bvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zgg-oY-ct9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2551.1999999999998" y="1.3493253373313345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gpo-YD-Wp1">
@@ -67,6 +117,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wA6-UJ-GzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-202.40000000000001" y="-694.00299850074964"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gaU-Sp-YCb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vKp-Q7-Do4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fOg-d8-lVU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ncb-yf-daC" kind="relationship" relationship="rootViewController" id="la2-Zj-9NI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Nx-d2-wcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="1.3493253373313345"/>
         </scene>
     </scenes>
 </document>

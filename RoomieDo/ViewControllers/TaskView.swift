@@ -42,29 +42,6 @@ class TaskView: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-
-    @IBAction func addTask(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "New Task", message: "Add a new task", preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) {
-            [unowned self] action in
-            
-            guard let textField = alert.textFields?.first, let taskName = textField.text else {
-                return
-            }
-            
-            self.save(taskName: taskName)
-            self.tableView.reloadData()
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addTextField()
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true)
-    }
     
     func save(taskName: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -88,6 +65,15 @@ class TaskView: UIViewController {
             print("Could not save. \(error), \(error.userInfo)")
         }
         
+    }
+    
+    @IBAction func unwindFromAddNewTask(_ sender: UIStoryboardSegue) {
+        if sender.source is NewTaskView {
+            if let senderVC = sender.source as? NewTaskView {
+                self.save(taskName: senderVC.task)
+                 self.tableView.reloadData()
+            }
+        }
     }
     /*
     // MARK: - Navigation
