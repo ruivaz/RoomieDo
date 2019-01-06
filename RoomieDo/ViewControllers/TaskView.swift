@@ -70,8 +70,10 @@ class TaskView: UIViewController {
     @IBAction func unwindFromAddNewTask(_ sender: UIStoryboardSegue) {
         if sender.source is NewTaskView {
             if let senderVC = sender.source as? NewTaskView {
-                self.save(taskName: senderVC.task)
-                 self.tableView.reloadData()
+                if !senderVC.task.isEmpty {
+                    self.save(taskName: senderVC.task)
+                    self.tableView.reloadData()
+                }
             }
         }
     }
