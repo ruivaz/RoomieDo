@@ -15,7 +15,7 @@
 		DB79D7EE21E17D43001BF221 /* RoomieDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7ED21E17D43001BF221 /* RoomieDoTests.swift */; };
 		DB79D7F921E17D43001BF221 /* RoomieDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7F821E17D43001BF221 /* RoomieDoUITests.swift */; };
 		DB79D80A21E17DA5001BF221 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80921E17DA5001BF221 /* Task.swift */; };
-		DB79D80C21E17DCA001BF221 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80B21E17DCA001BF221 /* TaskViewController.swift */; };
+		DB79D80E21E18DA1001BF221 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80D21E18DA1001BF221 /* TaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		DB79D7F821E17D43001BF221 /* RoomieDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomieDoUITests.swift; sourceTree = "<group>"; };
 		DB79D7FA21E17D43001BF221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB79D80921E17DA5001BF221 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		DB79D80B21E17DCA001BF221 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		DB79D80D21E18DA1001BF221 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 		DB79D80621E17D74001BF221 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DB79D80B21E17DCA001BF221 /* TaskViewController.swift */,
+				DB79D80D21E18DA1001BF221 /* TaskView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB79D7DE21E17D41001BF221 /* RoomieDo.xcdatamodeld in Sources */,
-				DB79D80C21E17DCA001BF221 /* TaskViewController.swift in Sources */,
+				DB79D80E21E18DA1001BF221 /* TaskView.swift in Sources */,
 				DB79D80A21E17DA5001BF221 /* Task.swift in Sources */,
 				DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */,
 			);
