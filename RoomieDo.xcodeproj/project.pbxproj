@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5D45262B361E6E51BF8F31 /* Pods_RoomieDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98502F623E33C2D17F55385 /* Pods_RoomieDo.framework */; };
+		2A1B59996D49793294095795 /* Pods_RoomieDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A531B04DFBCACAF86F6B0B88 /* Pods_RoomieDoUITests.framework */; };
+		CE4E498431CF15D4454AEBC8 /* Pods_RoomieDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068192158E3907827F463258 /* Pods_RoomieDoTests.framework */; };
 		DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7D521E17D41001BF221 /* AppDelegate.swift */; };
 		DB79D7DB21E17D41001BF221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7D921E17D41001BF221 /* Main.storyboard */; };
 		DB79D7DE21E17D41001BF221 /* RoomieDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7DC21E17D41001BF221 /* RoomieDo.xcdatamodeld */; };
@@ -37,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		068192158E3907827F463258 /* Pods_RoomieDoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomieDoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E85D9344B2AB11C2EDFABF /* Pods-RoomieDoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDoUITests/Pods-RoomieDoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		202BCD04AEA35374599B2FC3 /* Pods-RoomieDoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDoUITests/Pods-RoomieDoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		521945EA3709D517020DEA64 /* Pods-RoomieDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDo/Pods-RoomieDo.release.xcconfig"; sourceTree = "<group>"; };
+		6ABCA14C26E96B31C20D4100 /* Pods-RoomieDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDo/Pods-RoomieDo.debug.xcconfig"; sourceTree = "<group>"; };
+		A531B04DFBCACAF86F6B0B88 /* Pods_RoomieDoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomieDoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B03097FA75634AEB77FF5757 /* Pods-RoomieDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDoTests/Pods-RoomieDoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B98502F623E33C2D17F55385 /* Pods_RoomieDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomieDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D707E5224F95CBD5D43DB0D6 /* Pods-RoomieDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDoTests/Pods-RoomieDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB79D7D221E17D41001BF221 /* RoomieDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomieDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79D7D521E17D41001BF221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB79D7DA21E17D41001BF221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5D45262B361E6E51BF8F31 /* Pods_RoomieDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4E498431CF15D4454AEBC8 /* Pods_RoomieDoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1B59996D49793294095795 /* Pods_RoomieDoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A6825644A91816DA2B63989 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B98502F623E33C2D17F55385 /* Pods_RoomieDo.framework */,
+				068192158E3907827F463258 /* Pods_RoomieDoTests.framework */,
+				A531B04DFBCACAF86F6B0B88 /* Pods_RoomieDoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB79D7C921E17D41001BF221 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +112,8 @@
 				DB79D7EC21E17D43001BF221 /* RoomieDoTests */,
 				DB79D7F721E17D43001BF221 /* RoomieDoUITests */,
 				DB79D7D321E17D41001BF221 /* Products */,
+				FB05BEE90DAE0906E4C9D426 /* Pods */,
+				4A6825644A91816DA2B63989 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +130,7 @@
 		DB79D7D421E17D41001BF221 /* RoomieDo */ = {
 			isa = PBXGroup;
 			children = (
+				DB79D81221E5BADC001BF221 /* ViewModels */,
 				DB79D80721E17D7D001BF221 /* Models */,
 				DB79D80621E17D74001BF221 /* ViewControllers */,
 				DB79D7D521E17D41001BF221 /* AppDelegate.swift */,
@@ -158,6 +186,26 @@
 			path = Tasks;
 			sourceTree = "<group>";
 		};
+		DB79D81221E5BADC001BF221 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FB05BEE90DAE0906E4C9D426 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6ABCA14C26E96B31C20D4100 /* Pods-RoomieDo.debug.xcconfig */,
+				521945EA3709D517020DEA64 /* Pods-RoomieDo.release.xcconfig */,
+				B03097FA75634AEB77FF5757 /* Pods-RoomieDoTests.debug.xcconfig */,
+				D707E5224F95CBD5D43DB0D6 /* Pods-RoomieDoTests.release.xcconfig */,
+				09E85D9344B2AB11C2EDFABF /* Pods-RoomieDoUITests.debug.xcconfig */,
+				202BCD04AEA35374599B2FC3 /* Pods-RoomieDoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB79D7FD21E17D43001BF221 /* Build configuration list for PBXNativeTarget "RoomieDo" */;
 			buildPhases = (
+				074657F4CCAF77977BA8DAC7 /* [CP] Check Pods Manifest.lock */,
 				DB79D7CE21E17D41001BF221 /* Sources */,
 				DB79D7CF21E17D41001BF221 /* Frameworks */,
 				DB79D7D021E17D41001BF221 /* Resources */,
+				8A6B5109897B43EC82BF20CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB79D80021E17D43001BF221 /* Build configuration list for PBXNativeTarget "RoomieDoTests" */;
 			buildPhases = (
+				D575E9A73D77212295969E3B /* [CP] Check Pods Manifest.lock */,
 				DB79D7E521E17D43001BF221 /* Sources */,
 				DB79D7E621E17D43001BF221 /* Frameworks */,
 				DB79D7E721E17D43001BF221 /* Resources */,
@@ -200,6 +251,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB79D80321E17D43001BF221 /* Build configuration list for PBXNativeTarget "RoomieDoUITests" */;
 			buildPhases = (
+				71A7B29D9D9413262022EFD6 /* [CP] Check Pods Manifest.lock */,
 				DB79D7F021E17D43001BF221 /* Sources */,
 				DB79D7F121E17D43001BF221 /* Frameworks */,
 				DB79D7F221E17D43001BF221 /* Resources */,
@@ -283,6 +335,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		074657F4CCAF77977BA8DAC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoomieDo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71A7B29D9D9413262022EFD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoomieDoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6B5109897B43EC82BF20CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RoomieDo/Pods-RoomieDo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RoomieDo/Pods-RoomieDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D575E9A73D77212295969E3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoomieDoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB79D7CE21E17D41001BF221 /* Sources */ = {
@@ -466,6 +609,7 @@
 		};
 		DB79D7FE21E17D43001BF221 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ABCA14C26E96B31C20D4100 /* Pods-RoomieDo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -483,6 +627,7 @@
 		};
 		DB79D7FF21E17D43001BF221 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521945EA3709D517020DEA64 /* Pods-RoomieDo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +645,7 @@
 		};
 		DB79D80121E17D43001BF221 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B03097FA75634AEB77FF5757 /* Pods-RoomieDoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +666,7 @@
 		};
 		DB79D80221E17D43001BF221 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D707E5224F95CBD5D43DB0D6 /* Pods-RoomieDoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +687,7 @@
 		};
 		DB79D80421E17D43001BF221 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09E85D9344B2AB11C2EDFABF /* Pods-RoomieDoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -559,6 +707,7 @@
 		};
 		DB79D80521E17D43001BF221 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 202BCD04AEA35374599B2FC3 /* Pods-RoomieDoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
