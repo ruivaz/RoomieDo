@@ -16,7 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let oneDay = DateComponents(day:1)
+        let today = Date()
+        let tomorrow = Calendar.current.date(byAdding: oneDay, to: today)!
+        let tasks = [Task(taskName: "Walk the dog", dueDate: tomorrow, reminderDate: today, category_raw: Task.Category.personal.rawValue, repeats_raw: Task.RepeatFrequency.daily.rawValue)]
+        let viewModel = TaskListViewController.TaskListViewModel(tasks: tasks)
+        let listViewController = TaskListViewController(viewModel: viewModel)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController(rootViewController: listViewController)
+        window?.backgroundColor = .black
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 237.0/255, green: 76/255, blue: 119/255, alpha: 1)
+        UINavigationBar.appearance().isTranslucent = false
+        let navigationTitleAttributes: [NSAttributedString.Key: Any] = {
+            return [ NSAttributedString.Key.foregroundColor: UIColor.white ]
+        }()
+        UINavigationBar.appearance().tintColor = .white
+        UIBarButtonItem.appearance().setTitleTextAttributes(navigationTitleAttributes, for: .normal)
+        UINavigationBar.appearance().titleTextAttributes = navigationTitleAttributes
+        
         return true
     }
 

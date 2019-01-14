@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Task {
+class Task: Equatable {
 
     var taskName: String?
 
@@ -75,5 +75,65 @@ extension Task {
                 return -604800
             }
         }
+        
+        static func fromInterval(_ interval: TimeInterval) -> Reminder {
+            switch interval {
+            case 1800:
+                return .halfHour
+            case 3600:
+                return .oneHour
+            case 86400:
+                return .oneDay
+            case 604800:
+                return .oneWeek
+            default:
+                return .none
+            }
+        }
+    }
+}
+
+// MARK: Computed variables
+extension Task {
+    var category: Category? {
+        get {
+            if let value = self.category_raw {
+                return Category(rawValue: value)!
+            }
+            return nil
+        }
+        set {
+            self.category_raw = newValue?.rawValue
+        }
+    }
+    
+    var repeats: RepeatFrequency {
+        get {
+            return RepeatFrequency(rawValue: self.repeats_raw)!
+        }
+        set {
+            self.repeats_raw = newValue.rawValue
+        }
+    }
+    
+    var reminder: Reminder {
+        get {
+            if let date = self.reminderDate {
+                let duration = date.seconds(from: self.dueDate)
+                return Reminder.fromInterval(duration)
+            }
+            return .none
+        }
+        set {
+            reminderDate = dueDate.addingTimeInterval(newValue.timeInterval)
+        }
+    }
+}
+
+extension Date {
+    /// Returns the amount of seconds from another date
+    func seconds(from date: Date) -> TimeInterval {
+        let duration =  Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0
+        return Double(abs(duration))
     }
 }
