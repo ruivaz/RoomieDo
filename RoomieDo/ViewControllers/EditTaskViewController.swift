@@ -38,6 +38,13 @@ class EditTaskViewController: FormViewController {
                 $0.onChange { [unowned self]  row in
                     self.viewModel.title = row.value
                 }
+                $0.add(rule: RuleRequired()) //1
+                $0.validationOptions = .validatesOnChange //2
+                $0.cellUpdate { (cell, row) in //3
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                }
             }
             +++ Section()
             <<< DateTimeRow() {
@@ -77,7 +84,7 @@ class EditTaskViewController: FormViewController {
     }
     
     private func initialize() {
-        let deleteButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: .deleteButtonPressed)
+        let deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: .deleteButtonPressed)
         navigationItem.leftBarButtonItem = deleteButton
         
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: .saveButtonPressed)
@@ -88,26 +95,24 @@ class EditTaskViewController: FormViewController {
     
     // MARK: - Actions
     @objc fileprivate func saveButtonPressed(_ sender: UIBarButtonItem) {
-        _ = navigationController?.popViewController(animated: true)
+        if form.validate().isEmpty {
+            _ = navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc fileprivate func deleteButtonPressed(_ sender: UIBarButtonItem) {
-        
-        // Uncomment these lines
-        //    let alert = UIAlertController(title: "Delete this item?", message: nil, preferredStyle: .alert)
-        //    let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        //    let delete = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-        //      self?.viewModel.delete()
-        //      _ = self?.navigationController?.popViewController(animated: true)
-        //    }
-        //
-        //    alert.addAction(delete)
-        //    alert.addAction(cancel)
-        //
-        //    navigationController?.present(alert, animated: true, completion: nil)
-        
-        // Delete this line
-        _ = navigationController?.popViewController(animated: true)
+
+        let alert = UIAlertController(title: "Delete this item?", message: nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let delete = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+          self?.viewModel.delete()
+          _ = self?.navigationController?.popViewController(animated: true)
+        }
+
+        alert.addAction(delete)
+        alert.addAction(cancel)
+
+        navigationController?.present(alert, animated: true, completion: nil)
     }
 }
 
