@@ -12,7 +12,6 @@
 		CE4E498431CF15D4454AEBC8 /* Pods_RoomieDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068192158E3907827F463258 /* Pods_RoomieDoTests.framework */; };
 		DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7D521E17D41001BF221 /* AppDelegate.swift */; };
 		DB79D7DB21E17D41001BF221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7D921E17D41001BF221 /* Main.storyboard */; };
-		DB79D7DE21E17D41001BF221 /* RoomieDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7DC21E17D41001BF221 /* RoomieDo.xcdatamodeld */; };
 		DB79D7E021E17D43001BF221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7DF21E17D43001BF221 /* Assets.xcassets */; };
 		DB79D7E321E17D43001BF221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */; };
 		DB79D7EE21E17D43001BF221 /* RoomieDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7ED21E17D43001BF221 /* RoomieDoTests.swift */; };
@@ -52,7 +51,6 @@
 		DB79D7D221E17D41001BF221 /* RoomieDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomieDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79D7D521E17D41001BF221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB79D7DA21E17D41001BF221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB79D7DD21E17D41001BF221 /* RoomieDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoomieDo.xcdatamodel; sourceTree = "<group>"; };
 		DB79D7DF21E17D43001BF221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB79D7E221E17D43001BF221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB79D7E421E17D43001BF221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				DB79D7DF21E17D43001BF221 /* Assets.xcassets */,
 				DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */,
 				DB79D7E421E17D43001BF221 /* Info.plist */,
-				DB79D7DC21E17D41001BF221 /* RoomieDo.xcdatamodeld */,
 			);
 			path = RoomieDo;
 			sourceTree = "<group>";
@@ -173,17 +170,9 @@
 		DB79D80721E17D7D001BF221 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DB79D80821E17D86001BF221 /* Tasks */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		DB79D80821E17D86001BF221 /* Tasks */ = {
-			isa = PBXGroup;
-			children = (
 				DB79D80921E17DA5001BF221 /* Task.swift */,
 			);
-			path = Tasks;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DB79D81221E5BADC001BF221 /* ViewModels */ = {
@@ -432,7 +421,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB79D7DE21E17D41001BF221 /* RoomieDo.xcdatamodeld in Sources */,
 				DB79D81021E27B4C001BF221 /* NewTaskView.swift in Sources */,
 				DB79D80E21E18DA1001BF221 /* TaskView.swift in Sources */,
 				DB79D80A21E17DA5001BF221 /* Task.swift in Sources */,
@@ -765,19 +753,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DB79D7DC21E17D41001BF221 /* RoomieDo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DB79D7DD21E17D41001BF221 /* RoomieDo.xcdatamodel */,
-			);
-			currentVersion = DB79D7DD21E17D41001BF221 /* RoomieDo.xcdatamodel */;
-			path = RoomieDo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DB79D7CA21E17D41001BF221 /* Project object */;
 }
