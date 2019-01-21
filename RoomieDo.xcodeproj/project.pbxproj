@@ -21,7 +21,6 @@
 		DB79D7E321E17D43001BF221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */; };
 		DB79D7EE21E17D43001BF221 /* RoomieDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7ED21E17D43001BF221 /* RoomieDoTests.swift */; };
 		DB79D7F921E17D43001BF221 /* RoomieDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7F821E17D43001BF221 /* RoomieDoUITests.swift */; };
-		DB79D80A21E17DA5001BF221 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80921E17DA5001BF221 /* Task.swift */; };
 		DB79D80E21E18DA1001BF221 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80D21E18DA1001BF221 /* TaskListViewController.swift */; };
 		DB79D81021E27B4C001BF221 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D80F21E27B4C001BF221 /* EditTaskViewController.swift */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		DB79D7F421E17D43001BF221 /* RoomieDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoomieDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79D7F821E17D43001BF221 /* RoomieDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomieDoUITests.swift; sourceTree = "<group>"; };
 		DB79D7FA21E17D43001BF221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB79D80921E17DA5001BF221 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DB79D80D21E18DA1001BF221 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		DB79D80F21E27B4C001BF221 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +198,6 @@
 			children = (
 				DB05D4D321F538CE00797A5D /* Task+CoreDataClass.swift */,
 				DB05D4D421F538CE00797A5D /* Task+CoreDataProperties.swift */,
-				DB79D80921E17DA5001BF221 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 				0B0EE5BF21EC264000DA08D1 /* TaskListViewModel.swift in Sources */,
 				0B0EE5C421EC3E8300DA08D1 /* EditTaskViewModel.swift in Sources */,
 				DB05D4B321F42D0600797A5D /* Task.xcdatamodeld in Sources */,
-				DB79D80A21E17DA5001BF221 /* Task.swift in Sources */,
 				DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */,
 				DB05D4D621F538CE00797A5D /* Task+CoreDataProperties.swift in Sources */,
 				0B0EE5C221EC2B2B00DA08D1 /* TaskListCellView.swift in Sources */,
