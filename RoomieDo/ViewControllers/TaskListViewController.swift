@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import CoreData
-
 
 class TaskListViewController: UIViewController {
     
