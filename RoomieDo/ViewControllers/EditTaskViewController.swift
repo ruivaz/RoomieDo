@@ -98,6 +98,8 @@ class EditTaskViewController: FormViewController {
         if form.validate().isEmpty {
             _ = navigationController?.popViewController(animated: true)
         }
+        
+        self.viewModel.save()
     }
     
     @objc fileprivate func deleteButtonPressed(_ sender: UIBarButtonItem) {

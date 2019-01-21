@@ -17,11 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let oneDay = DateComponents(day:1)
-        let today = Date()
-        let tomorrow = Calendar.current.date(byAdding: oneDay, to: today)!
-        let tasks = [Task(taskName: "Walk the dog", dueDate: tomorrow, reminderDate: today, category_raw: Task.Category.personal.rawValue, repeats_raw: Task.RepeatFrequency.daily.rawValue)]
-        let viewModel = TaskListViewController.TaskListViewModel(tasks: tasks)
+        let managedContext = self.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+
+        var fetchedTasks = [Task]()
+        
+        do {
+            fetchedTasks = try managedContext.fetch(fetchRequest) as! [Task]
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
+        
+        
+        let viewModel = TaskListViewController.TaskListViewModel(tasks: fetchedTasks, managedContext: managedContext)
         let listViewController = TaskListViewController(viewModel: viewModel)
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -75,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "RoomieDo")
+        let container = NSPersistentContainer(name: "Task")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

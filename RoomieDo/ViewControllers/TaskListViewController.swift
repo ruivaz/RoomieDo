@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class TaskListViewController: UIViewController {
     
@@ -51,7 +53,7 @@ class TaskListViewController: UIViewController {
     // Actions
     @objc fileprivate func addButtonPressed(_ sender: UIBarButtonItem) {
         // Uncomment these lines
-            let addViewModel = viewModel.addViewModel()
+        let addViewModel = viewModel.addViewModel()
             let addVC = EditTaskViewController(viewModel: addViewModel)
             navigationController?.pushViewController(addVC, animated: true)
     }

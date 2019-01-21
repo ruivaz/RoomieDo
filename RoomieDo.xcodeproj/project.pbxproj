@@ -13,6 +13,9 @@
 		1C5D45262B361E6E51BF8F31 /* Pods_RoomieDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98502F623E33C2D17F55385 /* Pods_RoomieDo.framework */; };
 		2A1B59996D49793294095795 /* Pods_RoomieDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A531B04DFBCACAF86F6B0B88 /* Pods_RoomieDoUITests.framework */; };
 		CE4E498431CF15D4454AEBC8 /* Pods_RoomieDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068192158E3907827F463258 /* Pods_RoomieDoTests.framework */; };
+		DB05D4B321F42D0600797A5D /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB05D4B121F42D0600797A5D /* Task.xcdatamodeld */; };
+		DB05D4D521F538CE00797A5D /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB05D4D321F538CE00797A5D /* Task+CoreDataClass.swift */; };
+		DB05D4D621F538CE00797A5D /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB05D4D421F538CE00797A5D /* Task+CoreDataProperties.swift */; };
 		DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79D7D521E17D41001BF221 /* AppDelegate.swift */; };
 		DB79D7E021E17D43001BF221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7DF21E17D43001BF221 /* Assets.xcassets */; };
 		DB79D7E321E17D43001BF221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */; };
@@ -53,6 +56,9 @@
 		B03097FA75634AEB77FF5757 /* Pods-RoomieDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDoTests/Pods-RoomieDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B98502F623E33C2D17F55385 /* Pods_RoomieDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomieDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D707E5224F95CBD5D43DB0D6 /* Pods-RoomieDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomieDoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoomieDoTests/Pods-RoomieDoTests.release.xcconfig"; sourceTree = "<group>"; };
+		DB05D4B221F42D0600797A5D /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
+		DB05D4D321F538CE00797A5D /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DB05D4D421F538CE00797A5D /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DB79D7D221E17D41001BF221 /* RoomieDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomieDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79D7D521E17D41001BF221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB79D7DF21E17D43001BF221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				DB79D7DF21E17D43001BF221 /* Assets.xcassets */,
 				DB79D7E121E17D43001BF221 /* LaunchScreen.storyboard */,
 				DB79D7E421E17D43001BF221 /* Info.plist */,
+				DB05D4B121F42D0600797A5D /* Task.xcdatamodeld */,
 			);
 			path = RoomieDo;
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 		DB79D80721E17D7D001BF221 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB05D4D321F538CE00797A5D /* Task+CoreDataClass.swift */,
+				DB05D4D421F538CE00797A5D /* Task+CoreDataProperties.swift */,
 				DB79D80921E17DA5001BF221 /* Task.swift */,
 			);
 			path = Models;
@@ -435,11 +444,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB79D81021E27B4C001BF221 /* EditTaskViewController.swift in Sources */,
+				DB05D4D521F538CE00797A5D /* Task+CoreDataClass.swift in Sources */,
 				DB79D80E21E18DA1001BF221 /* TaskListViewController.swift in Sources */,
 				0B0EE5BF21EC264000DA08D1 /* TaskListViewModel.swift in Sources */,
 				0B0EE5C421EC3E8300DA08D1 /* EditTaskViewModel.swift in Sources */,
+				DB05D4B321F42D0600797A5D /* Task.xcdatamodeld in Sources */,
 				DB79D80A21E17DA5001BF221 /* Task.swift in Sources */,
 				DB79D7D621E17D41001BF221 /* AppDelegate.swift in Sources */,
+				DB05D4D621F538CE00797A5D /* Task+CoreDataProperties.swift in Sources */,
 				0B0EE5C221EC2B2B00DA08D1 /* TaskListCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX8P776J8N;
 				INFOPLIST_FILE = RoomieDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NX8P776J8N;
 				INFOPLIST_FILE = RoomieDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,6 +775,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DB05D4B121F42D0600797A5D /* Task.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB05D4B221F42D0600797A5D /* Task.xcdatamodel */,
+			);
+			currentVersion = DB05D4B221F42D0600797A5D /* Task.xcdatamodel */;
+			path = Task.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB79D7CA21E17D41001BF221 /* Project object */;
 }

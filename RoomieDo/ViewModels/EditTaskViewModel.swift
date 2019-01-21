@@ -17,19 +17,21 @@ extension EditTaskViewController {
         
         var title: String? {
             get {
-                return task.taskName
+                return task.value(forKey: "taskName") as? String
+
             }
             set {
-                task.taskName = newValue
+                task.setValue(newValue, forKeyPath: "taskName")
             }
         }
         
-        var dueDate: Date {
+        var dueDate: Date? {
             get {
-                return task.dueDate
+                return task.value(forKey: "dueDate") as? Date
             }
             set {
-                task.dueDate = newValue
+                task.setValue(newValue, forKeyPath: "dueDate")
+
             }
         }
         
@@ -40,12 +42,10 @@ extension EditTaskViewController {
                                          Task.Reminder.oneWeek.rawValue]
         var reminder: String? {
             get {
-                return task.reminder.rawValue
+                return task.value(forKey: "reminder") as? String
             }
             set {
-                if let value = newValue {
-                    task.reminder = Task.Reminder(rawValue: value)!
-                }
+                task.setValue(newValue, forKeyPath: "reminder")
             }
         }
         
@@ -56,12 +56,12 @@ extension EditTaskViewController {
                                        Task.RepeatFrequency.monthly.rawValue,
                                        Task.RepeatFrequency.annually.rawValue]
         
-        var repeatFrequency: String {
+        var repeatFrequency: String? {
             get {
-                return task.repeats.rawValue
+                return task.value(forKey: "repeats") as? String
             }
             set {
-                task.repeats = Task.RepeatFrequency(rawValue: newValue)!
+                task.setValue(newValue, forKeyPath: "repeats")
             }
         }
         
@@ -72,6 +72,11 @@ extension EditTaskViewController {
         }
         
         // MARK: - Actions
+        
+        func save() {
+            NotificationCenter.default.post(name: .saveToDoNotification, object: nil, userInfo: [ Notification.Name.saveToDoNotification : task ])
+        }
+        
         func delete() {
             NotificationCenter.default.post(name: .deleteToDoNotification, object: nil, userInfo: [ Notification.Name.deleteToDoNotification : task ])
         }
@@ -80,4 +85,6 @@ extension EditTaskViewController {
 
 extension Notification.Name {
     static let deleteToDoNotification = Notification.Name("delete todo")
+    static let saveToDoNotification = Notification.Name("save todo")
+
 }
