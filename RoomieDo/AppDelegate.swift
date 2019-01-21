@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // Load existing tasks from persistent data storage using Core Data
         let managedContext = self.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
@@ -28,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Failed to fetch employees: \(error)")
         }
-        
         
         let viewModel = TaskListViewController.TaskListViewModel(tasks: fetchedTasks, managedContext: managedContext)
         let listViewController = TaskListViewController(viewModel: viewModel)

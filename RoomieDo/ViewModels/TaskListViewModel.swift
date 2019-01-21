@@ -59,6 +59,7 @@ extension TaskListViewController {
         
         @objc private func saveToDo(_ notification: Notification) {
             do{
+                // Save to persistent storage
                 try self.managedContext.save()
                 print("saved")
             }catch let error as NSError {
