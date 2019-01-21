@@ -50,10 +50,10 @@ extension TaskListViewController {
                                            in: managedContext)!
             
             let task = NSManagedObject(entity: entity,
-                                       insertInto: managedContext)
-            
-            tasks.append(task as! Task)
-            let addViewModel = EditTaskViewController.ViewModel(task: task as! Task)
+                                       insertInto: managedContext) as! Task
+            task.dueDate = NSDate()
+            tasks.append(task)
+            let addViewModel = EditTaskViewController.ViewModel(task: task)
             return addViewModel
         }
         
