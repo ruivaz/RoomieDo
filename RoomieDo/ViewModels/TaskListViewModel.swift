@@ -56,8 +56,13 @@ extension TaskListViewController {
             let addViewModel = EditTaskViewController.ViewModel(task: task)
             return addViewModel
         }
-        
+
         @objc private func saveToDo(_ notification: Notification) {
+            guard let userInfo = notification.userInfo,
+                let task = userInfo[Notification.Name.saveToDoNotification] as? Task else {
+                    return
+            }
+
             do{
                 // Save to persistent storage
                 try self.managedContext.save()
@@ -65,17 +70,24 @@ extension TaskListViewController {
             }catch let error as NSError {
                 print("Could not save \(error), \(error.userInfo)")
             }
+
+            task.activateNotification()
+
         }
-        
+
         @objc private func removeToDo(_ notification: Notification) {
             guard let userInfo = notification.userInfo,
                 let task = userInfo[Notification.Name.deleteToDoNotification] as? Task,
                 let index = tasks.index(of: task) else {
                     return
             }
-            // Remove from array
+
+            // Remove from table view
             tasks.remove(at: index)
-            
+
+            // Remove this task's notification
+            task.deactivateNotification()
+
             // Remove from persistent storage
             self.managedContext.delete(task)
             
@@ -87,7 +99,7 @@ extension TaskListViewController {
             }
             
         }
-        
+
         init(tasks: [Task], managedContext: NSManagedObjectContext) {
             self.tasks = tasks
             self.managedContext = managedContext
@@ -101,7 +113,7 @@ extension TaskListViewController {
                                                    name: .saveToDoNotification, object: nil)
 
         }
-        
+
         deinit {
             NotificationCenter.default.removeObserver(self)
         }
