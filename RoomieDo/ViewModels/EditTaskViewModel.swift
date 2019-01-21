@@ -38,10 +38,11 @@ extension EditTaskViewController {
         }
         
         let reminderOptions: [String] = [Task.Reminder.none.rawValue,
+                                         Task.Reminder.oneMinute.rawValue,
+                                         Task.Reminder.tenMinutes.rawValue,
                                          Task.Reminder.halfHour.rawValue,
                                          Task.Reminder.oneHour.rawValue,
-                                         Task.Reminder.oneDay.rawValue,
-                                         Task.Reminder.oneWeek.rawValue]
+                                         Task.Reminder.oneDay.rawValue]
         var reminder: String? {
             get {
                 return task.reminder

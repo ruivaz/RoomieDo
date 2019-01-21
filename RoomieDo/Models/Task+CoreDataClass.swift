@@ -35,36 +35,41 @@ extension Task {
     
     enum Reminder: String {
         case none = "None"
+        case oneMinute = "1 minute before"
+        case tenMinutes = "10 minutes before"
         case halfHour = "30 minutes before"
         case oneHour = "1 hour before"
         case oneDay = "1 day before"
-        case oneWeek = "1 week before"
         
         var timeInterval: Double {
             switch self {
             case .none:
                 return 0
+            case .oneMinute:
+                return -60
+            case .tenMinutes:
+                return -600
             case .halfHour:
                 return -1800
             case .oneHour:
                 return -3600
             case .oneDay:
                 return -86400
-            case .oneWeek:
-                return -604800
             }
         }
         
         static func fromInterval(_ interval: TimeInterval) -> Reminder {
             switch interval {
+            case 60:
+                return .oneMinute
+            case 600:
+                return .tenMinutes
             case 1800:
                 return .halfHour
             case 3600:
                 return .oneHour
             case 86400:
                 return .oneDay
-            case 604800:
-                return .oneWeek
             default:
                 return .none
             }
