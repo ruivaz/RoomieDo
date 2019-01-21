@@ -17,21 +17,23 @@ extension EditTaskViewController {
         
         var title: String? {
             get {
-                return task.value(forKey: "taskName") as? String
-
+                return task.taskName
             }
             set {
-                task.setValue(newValue, forKeyPath: "taskName")
+                if let taskName = newValue {
+                    task.taskName = taskName
+                }
             }
         }
         
         var dueDate: Date? {
             get {
-                return task.value(forKey: "dueDate") as? Date
+                return task.dueDate as Date?
             }
             set {
-                task.setValue(newValue, forKeyPath: "dueDate")
-
+                if let dueDate = newValue {
+                    task.dueDate = dueDate as NSDate
+                }
             }
         }
         
@@ -42,10 +44,12 @@ extension EditTaskViewController {
                                          Task.Reminder.oneWeek.rawValue]
         var reminder: String? {
             get {
-                return task.value(forKey: "reminder") as? String
+                return task.reminder
             }
             set {
-                task.setValue(newValue, forKeyPath: "reminder")
+                if let reminder = newValue {
+                    task.reminder = reminder
+                }
             }
         }
         
@@ -58,10 +62,12 @@ extension EditTaskViewController {
         
         var repeatFrequency: String? {
             get {
-                return task.value(forKey: "repeats") as? String
+                return task.repeats
             }
             set {
-                task.setValue(newValue, forKeyPath: "repeats")
+                if let repeats = newValue {
+                    task.repeats = repeats
+                }
             }
         }
         

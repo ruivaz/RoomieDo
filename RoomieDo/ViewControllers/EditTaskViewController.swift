@@ -36,7 +36,9 @@ class EditTaskViewController: FormViewController {
                 $0.placeholder = "e.g. Wash your clothes"
                 $0.value = viewModel.title
                 $0.onChange { [unowned self]  row in
-                    self.viewModel.title = row.value
+                    if let title = row.value {
+                        self.viewModel.title = title
+                    }
                 }
                 $0.add(rule: RuleRequired()) //1
                 $0.validationOptions = .validatesOnChange //2
