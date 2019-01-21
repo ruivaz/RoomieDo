@@ -9,7 +9,7 @@
 
 import Foundation
 import CoreData
-
+import UserNotifications
 
 public class Task: NSManagedObject {
 
@@ -70,6 +70,54 @@ extension Task {
             }
         }
     }
+}
+
+extension Task {
+
+    var uniqueId: String {
+        get {
+            return self.objectID.uriRepresentation().absoluteString
+        }
+    }
+
+    var triggerDate: Date {
+        get {
+            return self.dueDate.addingTimeInterval(Reminder(rawValue: self.reminder)!.timeInterval) as Date
+        }
+    }
+
+    public func activateNotification() {
+        // Scheduling a notification with the same identifier will automatically remove any existing one
+
+        // Configure notification content
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: self.taskName, arguments: nil)
+        content.sound = UNNotificationSound.default
+
+        // Configure notification trigger
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
+                                                          from: self.triggerDate)
+
+        // TODO: create extension to calculate the Date Components for the repeats enum values
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+
+        // Create the request object
+        let request = UNNotificationRequest(identifier: self.uniqueId, content: content, trigger: trigger)
+
+        // Schedule the request.
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+            if let theError = error {
+                print(theError.localizedDescription)
+            }
+        }
+    }
+
+    public func deactivateNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [self.uniqueId])
+    }
+
 }
 
 
