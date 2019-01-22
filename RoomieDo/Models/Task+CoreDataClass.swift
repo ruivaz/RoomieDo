@@ -91,6 +91,40 @@ extension Task {
         }
     }
 
+    var isRecurring: Bool {
+        get {
+            guard let repeatFrequency = RepeatFrequency(rawValue: self.repeats) else {
+                fatalError("Found invalid RepeatFrequency enum rawValue \(self.repeats)")
+            }
+            switch repeatFrequency {
+            case .never:
+                return false
+            default:
+                return true
+            }
+        }
+    }
+
+    var repeatComponents: Set<Calendar.Component> {
+        get {
+            guard let repeatFrequency = RepeatFrequency(rawValue: self.repeats) else {
+                fatalError("Found invalid RepeatFrequency enum rawValue \(self.repeats)")
+            }
+            switch repeatFrequency {
+            case .never:
+                return [.year, .month, .day, .hour, .minute, .second]
+            case .daily:
+                return [.hour, .minute, .second]
+            case .weekly:
+                return [.weekday, .hour, .minute, .second]
+            case .monthly:
+                return [.day, .hour, .minute, .second]
+            case .annually:
+                return [.month, .day, .hour, .minute, .second]
+            }
+        }
+    }
+
     public func activateNotification() {
         // Scheduling a notification with the same identifier will automatically remove any existing one
 
@@ -100,11 +134,9 @@ extension Task {
         content.sound = UNNotificationSound.default
 
         // Configure notification trigger
-        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-                                                          from: self.reminderDate)
+        let triggerDate = Calendar.current.dateComponents(self.repeatComponents, from: self.reminderDate)
 
-        // TODO: create extension to calculate the Date Components for the repeats enum values
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: self.isRecurring)
 
         // Create the request object
         let request = UNNotificationRequest(identifier: self.uniqueId, content: content, trigger: trigger)
