@@ -85,7 +85,7 @@ extension Task {
         }
     }
 
-    var triggerDate: Date {
+    var reminderDate: Date {
         get {
             return self.dueDate.addingTimeInterval(Reminder(rawValue: self.reminder)!.timeInterval) as Date
         }
@@ -101,7 +101,7 @@ extension Task {
 
         // Configure notification trigger
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-                                                          from: self.triggerDate)
+                                                          from: self.reminderDate)
 
         // TODO: create extension to calculate the Date Components for the repeats enum values
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
